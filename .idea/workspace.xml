@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="356b535f-48bd-4025-a9ca-f1016a44ab4a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/config/user.yml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/stepdefinitions/classes/currencycloud.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/stepdefinitions/classes/site_prism.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/stepdefinitions/classes/subclass.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/support/env.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/support/hooks.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/features/support/world.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/report.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/feature/currenct_cloud.feature" afterPath="$PROJECT_DIR$/features/currenct_cloud.feature" />
+      <change beforePath="$PROJECT_DIR$/features/currenct_cloud.feature" afterPath="$PROJECT_DIR$/features/currency_cloud.feature" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,16 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cucumber.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,11 +68,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="world.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="world.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/support/world.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="currency_cloud_steps.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/stepdefinitions/currency_cloud_steps.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -258,12 +246,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517066182611</updated>
-      <workItem from="1517066184052" duration="6467000" />
+      <workItem from="1517066184052" duration="6673000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6467000" />
+    <option name="totallyTimeSpent" value="6673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1346" height="688" extended-state="0" />
@@ -300,7 +288,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/features/currenct_cloud.feature">
+    <entry file="file://$PROJECT_DIR$/features/currency_cloud.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
@@ -420,6 +408,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/stepdefinitions/currency_cloud_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
