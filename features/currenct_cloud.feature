@@ -30,7 +30,7 @@ Feature:A new Payments API has been delivered.
 
       How can i verify the buy amount?
 
-      
+
 
 
    Scenario: Create another quote but perform a negative assertion
