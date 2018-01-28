@@ -7,20 +7,11 @@ When (/^I login as an (.*)$/)do|user1|
 end
 
 And (/^I Generate API Key$/)do
-page.find("a.txt-btn-xs.i-cc-underlined").click
-if (page.should have_no_css('#reset-api-btn'))
-  expect(find('#api-key-input').value).to eql("$users[user2]['api_key']")
-else
-  expect(page).to have_css('#reset-api-btn', text:'Generate Key', visible: true)
- page.find('#reset-api-btn').click
- page.find('button.ajs-button.btn.btn-danger').click
- expect(page).to have_css('#api-key-input', visible: true)
-end
+@currencycloud.DirectDemoLoginPage.generate_api_key
 end
 
 Then (/^I should see the API key$/)do
-  page.should have_css('#api-key-input', visible: true)
- expect(find('#api-key-input').value).to eql("$users[user2]['api_key']")
+  @currencycloud.DirectDemoLoginPage.verify_generate_api_key
 end
 
 

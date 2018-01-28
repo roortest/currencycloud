@@ -9,6 +9,8 @@ require 'rspec/matchers'
 require 'capybara/rspec'
 require 'cucumber'
 require 'report_builder'
+require 'httparty'
+require 'json'
 
 class Currencycloud
 
