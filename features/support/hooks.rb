@@ -14,7 +14,7 @@ end
 
 Before do
   page.driver.browser.manage.window.maximize
-  #@tribal = Currencycloud.new
+  #@currencycloud = Currencycloud.new
 end
 
 

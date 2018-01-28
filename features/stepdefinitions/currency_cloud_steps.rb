@@ -1,13 +1,22 @@
 
+Given (/^I navigate to URL (.*)$/)do|url|
+ url = "https://direct-demo.currencycloud.com/profile"
+  visit url
+  expected = page.current_url
+  puts expected
+end
 
+When (/^I enter (.*),(.*) to login into currency cloud$/)do|login_id,password|
 
+end
 
+And (/^I perform API Key Generate$/)do
 
+end
 
+Then (/^I should see the API key$/)do
 
-
-
-
+end
 
 And (/^I enter login Id as (.*)$/)do|login_id|
 
@@ -15,6 +24,11 @@ end
 And (/^I enter api key as (.*)$/)do|api_key|
 
 end
+
+And (/^I logout$/)do
+  @currencycloud.DirectDemoProfilePage.logout.click
+end
+
 
 And (/^click on login$/)do
 
@@ -27,6 +41,34 @@ end
 And (/^I Generate authentication token$/)do
   @currencycloud.AuthenticateLoginPage.generate_auth_token
 end
+
 And (/^I retrieve a login token$/)do
   @currencycloud.AuthenticateLoginPage.retrieve_a_login_token
+end
+
+And (/^I click on End API session$/)do
+  @currencycloud.AuthenticateLoginPage.end_api_session
+end
+
+
+Then (/^I should get end api session response$/)do
+  @currencycloud.AuthenticateLoginPage.end_api_session_response
+end
+
+When (/^I navigate to Conversions API page$/)do
+
+end
+
+
+And (/^I enter all required parameters with valid data$/)do
+
+end
+
+
+And (/^I complete the quote$/)do
+
+end
+
+Then (/^I should get created quote response$/)do
+
 end

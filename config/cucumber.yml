@@ -1,8 +1,5 @@
 default: --format pretty --tags @wip --format html --out  report.html -x -q DRIVER=debug
 
-##default: --format pretty --tags ~@wip --format json --out reports/tribal_report<%= ENV['TEST_ENV_NUMBER'] %>.json -x --no-source DRIVER=debug
-#parallel:  scenarios --format pretty -t @pass -t @wip -x --format json --out reports/tribal_report<%= ENV['TEST_ENV_NUMBER'] %>.json --format junit --out junit
-#ci: --format pretty -t @pass -t ~@wip -t ~@fail -x --format json --out reports/tribal_report.json --format junit --out junit
-#
+
 
 
