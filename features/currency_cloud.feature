@@ -4,18 +4,13 @@ Feature:A new Payments API has been delivered.
   The API returns JSON responses and performs error handling in the event of an invalid request taking place.
 
   Background:
-    Given I navigate to URL "https://direct-demo.currencycloud.com/login"
-    When I enter Login ID,Password to login into currency cloud        # NEED TO WORK OUT
-    And I perform API Key Generate
+    Given that I have direct demo currency cloud login page opened
+    When I login as an "User1"
+    And I Generate API Key
     Then I should see the API key
     And I logout
     And I navigate to URL "https://developer.currencycloud.com/login/"
-    And I enter login Id as <login_id>
-    And I enter api key as <api_key>
-    And click on login
-   Examples:
-   |login_id                  |api_key                                                         |
-   |rchittathuru@gmail.com    |63d3f07936578492ecdc09fe072f5198d802f03cc7d0b3d115c88beca5c2a311|
+    And I login as a "User2"
 
 
   Scenario1: Perform User Login and retrieve a login token
@@ -33,6 +28,7 @@ Feature:A new Payments API has been delivered.
 
   Scenario3: Verify the buy amount is correct to the rate
     #UNABLE TO TEST THIS SCENARIO AS I CAN SEE ERROR MESSAGE ALL THE TIME SO COULDN'T ABLE TO COMPARE
+     #HAVE ATTACHED SCREENSHOT FOR THIS ISSUE.
 
 
   Scenario4: Create another quote but perform a negative assertion

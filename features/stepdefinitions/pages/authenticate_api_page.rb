@@ -1,4 +1,5 @@
 class AuthenticateApiPage < SitePrism::Page
+
 element :authen_api_nav, '#accordion > h4'
 element :api_uer_login_link, 'li.accordion-link.link'
 element :end_api_session_link, '//*[@id="accordion"]/nav[1]/ul/li[2]/a'
@@ -7,7 +8,17 @@ element :api_key_value, '//*[@id="require-params"]/table/tbody/tr[3]/td[3]/span[
 element :execute, '#execute'
 element :conversions_api, '//*[@id="accordion"]/h4[6]'
 element :create_conversion_link, '//*[@id="accordion"]/nav[6]/ul/li[3]/a'
+element :login_btn, '#form-submit'
+element :login_id, '#form-email'
+element :api_key, '#form-api-key'
 
+
+
+def login_as_a(user2)
+  login_id.set($users[user2]['email'])
+  api_key.set($users[user2]['api_key'])
+  login_btn.click
+  end
 
 
   def generate_auth_token

@@ -1,16 +1,16 @@
-
-Given (/^I navigate to URL (.*)$/)do|url|
- url = "https://direct-demo.currencycloud.com/profile"
-  visit url
-  expected = page.current_url
-  puts expected
+Given (/^that I have direct demo currency cloud login page opened$/)do|url|
+ @currencycloud.direct_demo_login_page.load
 end
 
-When (/^I enter (.*),(.*) to login into currency cloud$/)do|login_id,password|
-
+When (/^I login as an (.*)$/)do|user1|
+  @currencycloud.DirectDemoLoginPage.login_as(user1)
 end
 
-And (/^I perform API Key Generate$/)do
+And (/^I Generate API Key$/)do
+page.find("a.txt-btn-xs.i-cc-underlined").click
+expect(page).to have_css('#reset-api-btn', text:'', visible: true)
+  page.find('#reset-api-btn').click
+  page.find('button.ajs-button.btn.btn-danger').click
 
 end
 
@@ -18,21 +18,20 @@ Then (/^I should see the API key$/)do
 
 end
 
-And (/^I enter login Id as (.*)$/)do|login_id|
-
+And (/^I navigate to URL (.*)$/)do |url|
+  visit url
 end
-And (/^I enter api key as (.*)$/)do|api_key|
 
+
+And (/^I login as a(.*)$/)do|user2|
+  @currencycloud.AuthenticateApiPage.login_as_a(user2)
 end
+
 
 And (/^I logout$/)do
-  @currencycloud.DirectDemoProfilePage.logout.click
+  @currencycloud.DirectDemoLoginPage.logout.click
 end
 
-
-And (/^click on login$/)do
-
-end
 
 Then(/^I navigate to API user login page$/)do
 
