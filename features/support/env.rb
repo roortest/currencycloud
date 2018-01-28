@@ -12,7 +12,7 @@ require 'report_builder'
 require 'httparty'
 require 'json'
 
-# $users = load_yaml_file('../config/users')
+$users = load_yaml_file('../config/users')
 
 # choose a driver, if its not given, then default is firefox
 if ENV['DRIVER'] == 'chrome'

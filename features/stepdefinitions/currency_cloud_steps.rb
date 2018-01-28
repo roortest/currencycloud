@@ -9,19 +9,21 @@ end
 And (/^I Generate API Key$/)do
 page.find("a.txt-btn-xs.i-cc-underlined").click
 expect(page).to have_css('#reset-api-btn', text:'', visible: true)
-  page.find('#reset-api-btn').click
-  page.find('button.ajs-button.btn.btn-danger').click
+page.find('#reset-api-btn').click
+page.find('button.ajs-button.btn.btn-danger').click
+expect(page).to have_css('#api-key-input', visible: true)
 
 end
 
 Then (/^I should see the API key$/)do
-
+  page.should have_css('#api-key-input', visible: true)
+ expect(find('#api-key-input').value).to eql("$users[user2]['api_key']")
 end
+
 
 And (/^I navigate to URL (.*)$/)do |url|
   visit url
 end
-
 
 And (/^I login as a(.*)$/)do|user2|
   @currencycloud.AuthenticateApiPage.login_as_a(user2)
