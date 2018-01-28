@@ -39,36 +39,44 @@ Then(/^I navigate to API user login page$/)do
 end
 
 And (/^I Generate authentication token$/)do
-  @currencycloud.AuthenticateLoginPage.generate_auth_token
+  @currencycloud.AuthenticateApiPage.generate_auth_token
 end
 
 And (/^I retrieve a login token$/)do
-  @currencycloud.AuthenticateLoginPage.retrieve_a_login_token
+  @currencycloud.AuthenticateApiPage.retrieve_a_login_token
 end
 
 And (/^I click on End API session$/)do
-  @currencycloud.AuthenticateLoginPage.end_api_session
+  @currencycloud.AuthenticateApiPage.end_api_session
 end
 
 
 Then (/^I should get end api session response$/)do
-  @currencycloud.AuthenticateLoginPage.end_api_session_response
+  @currencycloud.AuthenticateApiPage.end_api_session_response
 end
 
 When (/^I navigate to Conversions API page$/)do
-
+  @currencycloud.AuthenticateApiPage.navigate_to_conversions_api
 end
 
 
-And (/^I enter all required parameters with valid data$/)do
-
+And (/^I enter required parameters$/)do
+@currencycloud.CreateConversionsPage.enter_required_parameter
 end
-
 
 And (/^I complete the quote$/)do
-
+  @currencycloud.CreateConversionsPage.complete_quote
 end
 
 Then (/^I should get created quote response$/)do
+  @currencycloud.CreateConversionsPage.created_quote_response
+end
 
+And (/^I enter required parameters with invalid data$/)do
+  @currencycloud.CreateConversionsPage.required_parameters_invalid_data
+end
+
+Then (/^I should see a message saying (.*)$/)do|message|
+  expect(page).to have_css('#execution-status', text: 'Error', visible: true)
+  expect(page).to have_css('code.language-json', text: message,vsible: true)
 end

@@ -1,4 +1,4 @@
-class AuthenticateLoginPage < SitePrism::Page
+class AuthenticateApiPage < SitePrism::Page
 element :authen_api_nav, '#accordion > h4'
 element :api_uer_login_link, 'li.accordion-link.link'
 element :end_api_session_link, '//*[@id="accordion"]/nav[1]/ul/li[2]/a'
@@ -7,12 +7,6 @@ element :api_key_value, '//*[@id="require-params"]/table/tbody/tr[3]/td[3]/span[
 element :execute, '#execute'
 element :conversions_api, '//*[@id="accordion"]/h4[6]'
 element :create_conversion_link, '//*[@id="accordion"]/nav[6]/ul/li[3]/a'
-element :buy_currency_value, '//*[@id="require-params"]/table/tbody/tr[2]/td[3]/input'
-element :sell_currency_value, '//*[@id="require-params"]/table/tbody/tr[3]/td[3]/input'
-element :fixed_side_value, '//*[@id="require-params"]/table/tbody/tr[4]/td[3]/input'
-element :amount_value, '//*[@id="require-params"]/table/tbody/tr[5]/td[3]/input'
-element :term_agreement_value, '//*[@id="require-params"]/table/tbody/tr[6]/td[3]/input'
-
 
 
 
@@ -29,9 +23,9 @@ element :term_agreement_value, '//*[@id="require-params"]/table/tbody/tr[6]/td[3
 def retrieve_a_login_token
   require 'httparty'
   require 'json'
-  response = HTTParty.get("https://devapi.currencycloud.com/v2/authenticate/api", :query =>{:oauth_token => "abc"})
+  response = HTTParty.get("https://devapi.currencycloud.com/v2/authenticate/api", :query =>{:auth_token => "abc"})
   json = JSON.parse(response.body)
-  expected(json)
+  assert_equal '{"auth_token": 89fa1ea54adc7c2889f53225b895e4cd}', json
 expect(page).to have_css('code.language-json >span.p', visible: true)
 end
 
@@ -49,6 +43,11 @@ end
     response = HTTParty.get("https://devapi.currencycloud.com/v2/authenticate/close_session", :query =>{})
     json = JSON.parse(response.body)
     expect(page).to have_css('code.language-json >span.p', visible: true)
+  end
+
+  def navigate_to_conversions_api
+    page.find('conversions_api').click
+    expect(page).to have_css('create_conversion_link', visible: true)
   end
 
 end

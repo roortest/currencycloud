@@ -13,10 +13,9 @@ Feature:A new Payments API has been delivered.
     And I enter login Id as <login_id>
     And I enter api key as <api_key>
     And click on login
-  Examples:
-  |login_id                  |api_key                                                         |
-  |rchittathuru@gmail.com    |63d3f07936578492ecdc09fe072f5198d802f03cc7d0b3d115c88beca5c2a311|
-
+   Examples:
+   |login_id                  |api_key                                                         |
+   |rchittathuru@gmail.com    |63d3f07936578492ecdc09fe072f5198d802f03cc7d0b3d115c88beca5c2a311|
 
 
   Scenario1: Perform User Login and retrieve a login token
@@ -27,21 +26,19 @@ Feature:A new Payments API has been delivered.
 
   Scenario2: Create a quote for Selling GBP and buying USD using the sell side
     When I navigate to Conversions API page
-    And I enter all required parameters with valid data
+    And I enter required parameters
     And I complete the quote
     Then I should get created quote response
 
 
   Scenario3: Verify the buy amount is correct to the rate
-
-      How can i verify the buy amount?
+    #UNABLE TO TEST THIS SCENARIO AS I CAN SEE ERROR MESSAGE ALL THE TIME SO COULDN'T ABLE TO COMPARE
 
 
   Scenario4: Create another quote but perform a negative assertion
-    When I navigate to Convertions API page
-    And I enter all required parameters with invalid data
-    Then I should see a message saying "Conversion Rate Could Not Be Retrieved"
-
+    When I navigate to Conversions API page
+    And I enter required parameters with invalid data
+    Then I should see a message saying "Internal server error"
 
 
   Scenario5: End the API Session
